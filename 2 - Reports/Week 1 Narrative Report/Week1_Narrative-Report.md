@@ -22,5 +22,7 @@ All in all, Week 1 was centered on establishing our foundation — finalizing th
 
 ## Repository Setup and Documentation
 
+hi **hello**
+
 ## Reflection
 
