@@ -1,0 +1,132 @@
+## Development Progress and Collaboration Setup 
+
+This week focused on establishing the complete development workflow for our project, setting up the environment for all members, creating the initial class structure, and ensuring that everyone could collaborate smoothly within the repository.
+
+## 1. Initial Struggles With Environment Setup
+
+The process began with several difficulties in finding a consistent workspace that all group members could use. My first approach was to set up a collaborative environment using Visual Studio Code. However, this turned out to be more complicated than expected. I encountered problems with Python interpreters not being detected, Jupyter not connecting, and VSCode not resetting even after uninstalling and reinstalling it.
+
+At this stage, I was stuck switching between different solutions, trying to fix kernels, interpreter paths, Git integration, and extensions that refused to load. These issues consumed a lot of time and caused delays because I couldn't proceed with building the project structure until the coding environment was stable.
+
+<img width="1417" height="328" alt="vscode-error" src="https://github.com/user-attachments/assets/2402e100-2dc6-4e87-8713-16a869eaab90" />
+
+## 2. Transitioning to Jupyter Notebook as the Main Workspace
+
+After hours of trying to fix Visual Studio Code, I realized it was more efficient to return to something the group was already comfortable with: Jupyter Notebook using Anaconda.
+
+I reorganized the repository so that:
+
+- Each member had their own Jupyter Notebook inside the notebooks/ folder
+
+- The main OOP library (DataHabit/) remained separate with the .py files
+
+- Everyone could write and test code without breaking the main structure
+
+This made the workflow clear and beginner-friendly while still following proper modular coding.
+
+<img width="1862" height="849" alt="Screenshot 2025-11-14 122716" src="https://github.com/user-attachments/assets/f2754e0a-c43e-4760-b029-3b92dddad692" />
+
+<img width="1874" height="865" alt="Screenshot 2025-11-09 124300" src="https://github.com/user-attachments/assets/70b348e7-c161-4cbd-bd1c-c50aea658ea9" />
+
+## 3. Setting Up Collaboration Through GitHub
+
+The next challenge was enabling real collaboration. Since I am the repository owner, I added all members as collaborators. However, simply being collaborators doesn't show their contribution logs unless they commit through their own accounts.
+
+To solve this, I instructed everyone to fork the main repository so their names would appear in GitHub Insights when they contributed.
+
+I even created a second GitHub account and added it as a collaborator to test the workflow from their point of view. I used that account to record a full video tutorial so my groupmates would clearly understand how to:
+
+- Fork the repo
+
+- Open their Jupyter Notebook
+
+- Edit and save
+
+- Commit changes
+
+- Push updates
+
+- Make pull requests back to the main repo
+
+- This ensured that everyone could contribute individually while keeping the main project organized.
+
+<img width="1919" height="695" alt="Screenshot 2025-11-16 005029" src="https://github.com/user-attachments/assets/29cf841f-d175-4074-b31f-d990a0645e92" />
+
+<img width="1390" height="924" alt="Screenshot 2025-11-16 005153" src="https://github.com/user-attachments/assets/c8caccae-c478-4617-b4af-3e406cca9389" />
+
+## 4. Building the Main OOP Structure
+
+As group leader, I took responsibility for setting up the entire backbone of the project. I created the full folder structure, the __init__.py file, and the initial .py scripts inside the DataHabit/ directory:
+
+task_data.py, behavior_analyzer.py, visualizer.py
+
+I wrote the docstrings, imports, and base validations so the rest of the group could build their assigned parts. This included ensuring everything matched our UML diagram, deciding naming conventions, and implementing protected attributes for clarity and professionalism.
+
+I also prepared a testing notebook to verify that the imports worked and the module structure was correct.
+
+<img width="1916" height="936" alt="Screenshot 2025-11-09 114331" src="https://github.com/user-attachments/assets/f59f7a37-19ce-4b05-b6d2-94772e699810" />
+
+<img width="1916" height="1198" alt="Screenshot 2025-11-09 124651" src="https://github.com/user-attachments/assets/5945b433-6623-43b7-a07c-b9f1b9f2bc53" />
+
+## 5. TaskData Class Development
+
+## 6. Data Cleaning and Support Functions
+
+## 7. Visualizer Structure and Plot Placeholders
+
+## 8. BehaviorAnalyzer Development
+
+## 9. Use of Resources and Research Transparency
+
+As part of the development process, we made use of several online resources to understand the concepts, troubleshoot errors, and refine our implementation. Our goal was to learn effectively and apply the principles correctly, not to copy solutions blindly.
+
+We practiced honesty throughout the development by acknowledging the tools that helped us:
+
+**ChatGPT (as a Learning Assistant)**
+
+We used ChatGPT mainly for:
+
+- Clarifying OOP concepts
+
+- Understanding Python syntax and module structure
+
+- Troubleshooting errors (e.g., import paths, environment setup, Jupyter issues)
+
+- Getting explanations or breakdowns of ideas we wanted to implement
+
+The code written in the project was created manually by the group, based on our understanding. ChatGPT served as a guide to help us learn faster and avoid confusion, especially when dealing with imports, class relationships, and file organization.
+
+**Google (Documentation & Error Research)**
+
+We also searched through Google to explore:
+
+- Python documentation for datetime, classes, and modules
+
+- GitHub workflow explanations
+
+- Common solutions to ModuleNotFoundError and path issues
+
+These helped us understand technical details better.
+
+**YouTube Tutorials**
+
+Some members also referred to YouTube videos for:
+
+- How to use GitHub (forking, pull requests, commits)
+
+- Basic Python OOP tutorials
+
+- How to structure Python packages
+
+These videos supported our individual learning, especially for those who were new to Git, GitHub, or Python modules.
+
+**Class Resources & Provided Materials**
+
+We followed the rubric, UML diagram, and OOP requirements provided by our instructor, ensuring the project stayed aligned with the expected outcomes.
+
+
+
+
+
+
+
