@@ -120,9 +120,9 @@ This week, I was assigned by our task leader to develop the Visualizer class, wh
 
 
 The primary functions I worked on were:
-	•	**plot_timeline()** – This method visualizes the trend of submissions over time using a line graph.
-	•	**plot_summary()** – This summarizes weekly productivity using a bar chart.
-	•	**__eq__()** – A comparison method that checks whether two datasets have the same total productivity score.
+- **plot_timeline()** – This method visualizes the trend of submissions over time using a line graph.
+- **plot_summary()** – This summarizes weekly productivity using a bar chart.
+- **__eq__()** – A comparison method that checks whether two datasets have the same total productivity score.
 
 After completing the initial code, I tested my visulaizer class using a sample dataset:
 
