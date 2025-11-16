@@ -19,17 +19,17 @@ class TaskData:
     def __init__(self, student_id, task_name, submission_time):
         self._student_id = student_id
         self._task_name = task_name
-        self._submission_time = submission_time
+        self._submission_time = self.parse_timestamp(submission_time)
 
-    def parse_timestamp(self):
+    def parse_timestamp(self, timestamp: str):
         """Converts string timestamp to datetime object."""
-        return datetime.strptime(self._submission_time, "%Y-%m-%d %H:%M:%S")
+        return datetime.strptime(timestamp, "%Y-%m-%d %H:%M:%S")
 
     def get_delay(self, due_date):
         """Computes delay or earliness based on due date."""
-        submission_dt = self.parse_timestamp()
-        delay = submission_dt - due_date
-        return delay.days
+        if not isinstance(due_date, datetime):
+            due_date = datetime.strptime(due_date, "%Y-%m-%d %H:%M:%S")
+        return self._submission_time - due_date
 
     def __repr__(self):
         """Returns a readable representation of task data."""
