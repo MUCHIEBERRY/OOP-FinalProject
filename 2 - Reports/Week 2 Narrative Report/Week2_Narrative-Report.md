@@ -114,10 +114,10 @@ Working on this part helped me understand how small decisions can affect the rel
 ## 6. Data Cleaning and Support Functions
 
 ## 7. Visualizer Structure and Plot Placeholders
-**Development Updates**
+#### **Development Updates**
 This week, I was assigned by our task leader to develop the Visualizer class, which is responsible for generating graphs that show submission patterns and productivity levels of each student. When I opened the Jupyter notebook stored in our GitHub repository, I saw that a basic constructor and placeholder methods were already prepared. This initial structure helped me understand how the visualizer should function and what outputs it should produce.
 
-
+<img width="1561" height="516" alt="Screenshot (1439)" src="https://github.com/user-attachments/assets/b20c6e26-5bcf-4565-b8ee-637aa3c48758" />
 
 The primary functions I worked on were:
 - **plot_timeline()** – This method visualizes the trend of submissions over time using a line graph.
@@ -126,12 +126,16 @@ The primary functions I worked on were:
 
 After completing the initial code, I tested my visulaizer class using a sample dataset:
 
+<img width="1269" height="156" alt="Screenshot (1443)" src="https://github.com/user-attachments/assets/5c09ea10-56e5-44c4-889b-43a3d798abc3" />
+
 The Submission Timeline graph successfully displayed a placeholder line plot, showing different values across the given time index starting at 3 submissions, peaking at 6, dropping to 2, and then rising again to 5 before ending at 4. The visualization confirmed that the plot could accurately reflect changes in student productivity. The output demonstrated that the class could be used later for real data once our project is fully integrated.
 
 This visualization tool will be very helpful in our final output because it will allow the **DataHabit** to *compare productivity among students* and *analyze weekly progress*. It can help identify who is improving, who is consistent, and who needs more guidance in task completion.
 
-**Challenges**
+#### **Challenges**
 At the beginning of the task, I struggled with navigating GitHub since I was still not familiar with its file structure. Even after watching the tutorial provided by our leader, I continued to have difficulty locating the Jupyter notebook where I needed to write my code. I initially thought everything could be edited directly through the browser, but later found out after asking in our group chat—that I needed to install **GitHub Desktop** to properly access, download, and modify the files on my laptop.
+
+<img width="1920" height="1080" alt="Screenshot (1438)" src="https://github.com/user-attachments/assets/7e927f09-94ac-466a-a68a-900cb4195665" />
 
 Once I learned how to clone the repository, I was able to run the notebook in Jupyter and start coding. However, I faced another challenge when testing the visualization because I needed to make sure that **Matplotlib was installed** and functioning correctly in my environment. As a beginner, every step felt like a new puzzle, and sometimes I got frustrated when the code wouldn’t run correctly on the first try.
 
