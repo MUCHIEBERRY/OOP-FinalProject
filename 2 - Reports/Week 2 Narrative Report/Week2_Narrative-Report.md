@@ -117,6 +117,8 @@ Working on this part helped me understand how small decisions can affect the rel
 **Development Updates**
 This week, I was assigned by our task leader to develop the Visualizer class, which is responsible for generating graphs that show submission patterns and productivity levels of each student. When I opened the Jupyter notebook stored in our GitHub repository, I saw that a basic constructor and placeholder methods were already prepared. This initial structure helped me understand how the visualizer should function and what outputs it should produce.
 
+
+
 The primary functions I worked on were:
 	•	**plot_timeline()** – This method visualizes the trend of submissions over time using a line graph.
 	•	**plot_summary()** – This summarizes weekly productivity using a bar chart.
@@ -124,6 +126,16 @@ The primary functions I worked on were:
 
 After completing the initial code, I tested my visulaizer class using a sample dataset:
 
+The Submission Timeline graph successfully displayed a placeholder line plot, showing different values across the given time index starting at 3 submissions, peaking at 6, dropping to 2, and then rising again to 5 before ending at 4. The visualization confirmed that the plot could accurately reflect changes in student productivity. The output demonstrated that the class could be used later for real data once our project is fully integrated.
+
+This visualization tool will be very helpful in our final output because it will allow the **DataHabit** to *compare productivity among students* and *analyze weekly progress*. It can help identify who is improving, who is consistent, and who needs more guidance in task completion.
+
+**Challenges**
+At the beginning of the task, I struggled with navigating GitHub since I was still not familiar with its file structure. Even after watching the tutorial provided by our leader, I continued to have difficulty locating the Jupyter notebook where I needed to write my code. I initially thought everything could be edited directly through the browser, but later found out after asking in our group chat—that I needed to install **GitHub Desktop** to properly access, download, and modify the files on my laptop.
+
+Once I learned how to clone the repository, I was able to run the notebook in Jupyter and start coding. However, I faced another challenge when testing the visualization because I needed to make sure that **Matplotlib was installed** and functioning correctly in my environment. As a beginner, every step felt like a new puzzle, and sometimes I got frustrated when the code wouldn’t run correctly on the first try.
+
+Despite the difficulties, I am very thankful to our task leader, who guided us patiently and answered all our questions. This experience made me realize that using GitHub for collaborative development takes time to learn, but it is extremely useful once you understand how it works.
 
 ## 8. BehaviorAnalyzer Development
 
