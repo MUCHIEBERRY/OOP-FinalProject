@@ -114,6 +114,16 @@ Working on this part helped me understand how small decisions can affect the rel
 ## 6. Data Cleaning and Support Functions
 
 ## 7. Visualizer Structure and Plot Placeholders
+**Development Updates**
+This week, I was assigned by our task leader to develop the Visualizer class, which is responsible for generating graphs that show submission patterns and productivity levels of each student. When I opened the Jupyter notebook stored in our GitHub repository, I saw that a basic constructor and placeholder methods were already prepared. This initial structure helped me understand how the visualizer should function and what outputs it should produce.
+
+The primary functions I worked on were:
+	•	**plot_timeline()** – This method visualizes the trend of submissions over time using a line graph.
+	•	**plot_summary()** – This summarizes weekly productivity using a bar chart.
+	•	**__eq__()** – A comparison method that checks whether two datasets have the same total productivity score.
+
+After completing the initial code, I tested my visulaizer class using a sample dataset:
+
 
 ## 8. BehaviorAnalyzer Development
 
