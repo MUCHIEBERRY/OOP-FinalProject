@@ -79,7 +79,7 @@ Screenshot 2025-11-14 130048.png
 #### **Encountering the First Set of Errors**
 During the initial testing of the class, several errors appeared. These errors were important because they helped me understand which parts of the logic needed refinement. The first issue occurred when creating a TaskData object:
 
-Screenshot 2025-11-14 132131.png
+<img width="1916" height="1198" alt="Screenshot 2025-11-14 130048.png" src="https://github.com/user-attachments/assets/5945b433-6623-43b7-a07c-b9f1b9f2bc53](https://github.com/MUCHIEBERRY/OOP-FinalProject/blob/main/4%20-%20Docs/Screenshot%202025-11-14%20130048.png?raw=true)" />
 
 **TypeError:** “parse_timestamp() takes 1 positional argument but 2 were given”
 
