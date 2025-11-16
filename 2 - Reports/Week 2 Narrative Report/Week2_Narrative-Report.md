@@ -92,7 +92,7 @@ To address these concerns, I redesigned the parsing logic to make the class more
 - A string following the correct timestamp format
 - A datetime object, including values generated using datetime.now()
 
-The revised version begins by checking what type of data the user passed. If the submission time is already a datetime, the class keeps it as-is. If it is a string, the method attempts to parse it safely. This prevents double parsing, avoids unnecessary errors, and makes the class compatible with both manual inputs and automated timestamps. This improvement ensures that the class is durable enough to be used throughout the project without breaking when different modules feed it data.
+The revised version begins by checking what type of data the user passed. If the submission time is already a datetime, the class keeps it as-is. If it is a string, the method attempts to parse it safely. This prevents unnecessary errors, and makes the class compatible with both manual inputs and automated timestamps. This improvement ensures that the class is durable enough to be used throughout the project without breaking when different modules feed it data.
 
 #### **Encountering Another Set of Errors**
 During another testing of the class, several errors appeared. These errors were important because they helped me understand which parts of the logic needed refinement. The first issue occurred when creating a TaskData object:
@@ -102,6 +102,14 @@ During another testing of the class, several errors appeared. These errors were 
 **TypeError:** “parse_timestamp() takes 1 positional argument but 2 were given”
 
 This error happened because the constructor passed the submission time into the method, but my method definition did not accept any parameters besides self. This mismatch caused Python to treat the extra value as an unexpected argument. Fixing this required updating my method to properly accept and handle the timestamp value. After correcting the method signature, a second error appeared when I tried parsing the timestamp. This occurred because the variable timestamp_str had not been assigned inside the method. The issue reminded me that every variable used inside a function must be explicitly defined before it can be processed. Once I assigned the value correctly, the method worked as intended. These errors were helpful checkpoints as they showed which parts of the logic needed clearer structure and which values needed proper handling before they could be parsed.
+
+#### **Progress and Reflection** 
+
+By the end of the week, the TaskData class became fully functional and more resilient than the initial version. It now accepts both string-based and automatically generated timestamps, supports parsing, and computes delays accurately.
+
+<img width="1042" height="383" alt="Screenshot 2025-11-16 183008" src="https://github.com/user-attachments/assets/d407eeb0-9753-4888-9413-a2154be29242" />
+
+Working on this part helped me understand how small decisions can affect the reliability of the entire system. It also showed me the importance of planning ahead for potential user errors.
 
 ## 6. Data Cleaning and Support Functions
 
