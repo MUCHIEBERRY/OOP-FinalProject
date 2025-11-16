@@ -74,12 +74,13 @@ This week focused on developing the internal logic of the TaskData class that ou
 
 When I opened the file, the TaskData class contained the basic constructor and empty methods that served as the foundation for my work. Using this structure, I started implementing the logic for handling submission timestamps, computing delays, and producing readable output for testing. The first version I created focused on converting timestamp strings into datetime objects. I implemented the constructor, wrote the initial parse_timestamp() method, added a get_delay() calculation, and created a simple __repr__() method to check if the values were stored correctly.
 
-<img width="1916" height="1198" alt="Screenshot 2025-11-14 130048.png" src="https://github.com/user-attachments/assets/5945b433-6623-43b7-a07c-b9f1b9f2bc53" />
+Screenshot 2025-11-14 130048.png
 
 #### **Encountering the First Set of Errors**
 During the initial testing of the class, several errors appeared. These errors were important because they helped me understand which parts of the logic needed refinement. The first issue occurred when creating a TaskData object:
 
-<img width="1916" height="1198" alt="Screenshot 2025-11-14 132131.png" src="https://github.com/user-attachments/assets/5945b433-6623-43b7-a07c-b9f1b9f2bc53" />
+Screenshot 2025-11-14 132131.png
+
 **TypeError:** “parse_timestamp() takes 1 positional argument but 2 were given”
 
 This error happened because the constructor passed the submission time into the method, but my method definition did not accept any parameters besides self. This mismatch caused Python to treat the extra value as an unexpected argument. Fixing this required updating my method to properly accept and handle the timestamp value. After correcting the method signature, a second error appeared when I tried parsing the timestamp. This occurred because the variable timestamp_str had not been assigned inside the method. The issue reminded me that every variable used inside a function must be explicitly defined before it can be processed. Once I assigned the value correctly, the method worked as intended. These errors were helpful checkpoints as they showed which parts of the logic needed clearer structure and which values needed proper handling before they could be parsed.
@@ -87,7 +88,7 @@ This error happened because the constructor passed the submission time into the 
 #### **Testing the First Working Version**
 After completing the initial implementation, I ran tests to verify whether the class worked as intended. I created a sample TaskData object, printed the representation, called the parsing method, and checked if the delay computation produced the correct number of hours. The class performed correctly when the timestamp followed the format "YYYY-MM-DD HH:MM:SS", and the outputs matched the calculations I expected.
 
-<img width="1916" height="1198" alt="Screenshot 2025-11-14 130056.png" src="https://github.com/user-attachments/assets/5945b433-6623-43b7-a07c-b9f1b9f2bc53" />
+Screenshot 2025-11-14 130056.png
 
 ## 6. Data Cleaning and Support Functions
 
