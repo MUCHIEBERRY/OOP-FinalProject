@@ -70,6 +70,13 @@ I also prepared a testing notebook to verify that the imports worked and the mod
 
 ## 5. TaskData Class Development
 
+This week focused on developing the internal logic of the TaskData class that our leader had prepared. The backbone of the file — its attributes, basic method structure, and documentation was already in place. My main responsibility was to implement the full functionality, test each behavior, and resolve the issues that appeared as I made the class operational.
+
+When I opened the file, the TaskData class contained the basic constructor and empty methods that served as the foundation for my work. Using this structure, I started implementing the logic for handling submission timestamps, computing delays, and producing readable output for testing. The first version I created focused on converting timestamp strings into datetime objects. I implemented the constructor, wrote the initial parse_timestamp() method, added a get_delay() calculation, and created a simple __repr__() method to check if the values were stored correctly.
+
+**Encountering the First Set of Errors**
+During the initial testing of the class, several errors appeared. These errors were important because they helped me understand which parts of the logic needed refinement. The first issue occurred when creating a TaskData object:
+
 ## 6. Data Cleaning and Support Functions
 
 ## 7. Visualizer Structure and Plot Placeholders
