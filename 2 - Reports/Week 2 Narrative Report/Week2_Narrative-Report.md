@@ -137,9 +137,7 @@ At the beginning of the task, I struggled with navigating GitHub since I was sti
 
 <img width="1920" height="1080" alt="Screenshot (1438)" src="https://github.com/user-attachments/assets/7e927f09-94ac-466a-a68a-900cb4195665" />
 
-Once I learned how to clone the repository, I was able to run the notebook in Jupyter and start coding. However, I faced another challenge when testing the visualization because I needed to make sure that **Matplotlib was installed** and functioning correctly in my environment. As a beginner, every step felt like a new puzzle, and sometimes I got frustrated when the code wouldn’t run correctly on the first try.
-
-Despite the difficulties, I am very thankful to our task leader, who guided us patiently and answered all our questions. This experience made me realize that using GitHub for collaborative development takes time to learn, but it is extremely useful once you understand how it works.
+Once I learned how to clone the repository, I was able to run the notebook in Jupyter and start coding. However, I faced another challenge when testing the visualization because I needed to make sure that **Matplotlib was installed** and functioning correctly in my environment. Despite the difficulties, I am very thankful to our task leader, who guided us patiently and answered all our questions. This experience made me realize that using GitHub for collaborative development takes time to learn, but it is extremely useful once you understand how it works.
 
 ## 8. BehaviorAnalyzer Development
 
