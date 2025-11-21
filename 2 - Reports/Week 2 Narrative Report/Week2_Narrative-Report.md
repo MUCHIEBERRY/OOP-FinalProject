@@ -141,6 +141,147 @@ Once I learned how to clone the repository, I was able to run the notebook in Ju
 
 ## 8. BehaviorAnalyzer Development
 
+For this week’s task, I was assigned to create the BehaviorAnalyzer child class, which inherits from the parent class TaskData. The goal was to extend the features of TaskData by adding classification logic and statistical methods that would detect student behavior patterns such as Procrastinator, Constant Worker, and Early Finisher.
+
+While developing the child class, several issues emerged inside the project directory and in the original task_data.py file.
+
+The first major issue happened when trying to import classes from the DataHabit package inside a Jupyter Notebook. Even though the folder existed, Python still could not detect it. This prevented further testing of the functions inside task_data.py, behavior_analyzer.py, and visualizer.py.
+
+![eb4341a2-55cf-4257-b078-72929b3409da](https://github.com/user-attachments/assets/b63426ba-c45a-4df8-a0b3-8d1010a7ad9c)
+
+After fixing the folder structure, another error occurred during execution of the analyzer. This indicated that some dates were still strings instead of datetime objects.
+
+![86dd0a29-330e-4934-94aa-c7d34efee398](https://github.com/user-attachments/assets/2a318b9c-2f08-43df-a23f-84abd75ae15f)
+
+Diagnosis of the Issue
+
+1. Import Error Due to Incorrect Folder & File Naming
+
+Upon inspection of the project directory, several misconfigurations were discovered:
+
+-The files looked like Python files but actually had no .py extension.
+
+-One file was named behavior-analyzer — Python does not allow hyphens in module names.
+
+-There was no _init_.py file at first, so Python did not recognize the folder as a package.
+
+-The Jupyter Notebook path did not include the parent directory.
+
+These issues prevented Python from importing the modules properly.
+
+2. Errors Inside task_data.py
+
+Once import was working, the next issue appeared inside task_data.py:
+
+*The timestamp strings from the dataset were not converted into datetime objects.
+
+As a result, behavior_analyzer.py attempted to subtract a string from a datetime, causing:
+
+TypeError: unsupported operand type(s) for -: 'str' and 'datetime.datetime'
+
+This made it impossible for the program to compute delays or behavioral statistics.
+
+Solutions Implemented
+
+1. Fixing the Import Path in Jupyter Notebook
+
+Added:
+
+import sys
+sys.path.append("../")
+
+Then imported:
+
+from DataHabit.task_data import TaskData
+from DataHabit.behavior_analyzer import BehaviorAnalyzer
+from DataHabit.visualizer import Visualizer
+
+Imports became fully functional.
+
+The first major issue happened when trying to import classes from the DataHabit package inside a Jupyter Notebook. Even though the folder existed, Python still could not detect it. This prevented further testing of the functions inside task_data.py, behavior_analyzer.py, and visualizer.py.
+
+After fixing the folder structure, another error occurred during execution of the analyzer. This indicated that some dates were still strings instead of datetime objects.
+
+Diagnosis of the Issue
+
+1. Import Error Due to Incorrect Folder & File Naming
+
+Upon inspection of the project directory, several misconfigurations were discovered:
+
+The files looked like Python files but actually had no .py extension.
+
+One file was named behavior-analyzer — Python does not allow hyphens in module names.
+
+There was no _init_.py file at first, so Python did not recognize the folder as a package.
+
+The Jupyter Notebook path did not include the parent directory.
+
+These issues prevented Python from importing the modules properly.
+
+
+2. Errors Inside task_data.py
+
+Once import was working, the next issue appeared inside task_data.py:
+
+The timestamp strings from the dataset were not converted into datetime objects.
+
+As a result, behavior_analyzer.py attempted to subtract a string from a datetime, causing:
+
+TypeError: unsupported operand type(s) for -: 'str' and 'datetime.datetime'
+
+This made it impossible for the program to compute delays or behavioral statistics.
+
+**Solutions Implemented**
+
+1. Fixing the Import Path in Jupyter Notebook
+
+Added:
+
+import sys
+sys.path.append("../")
+
+Then imported:
+
+from DataHabit.task_data import TaskData
+from DataHabit.behavior_analyzer import BehaviorAnalyzer
+from DataHabit.visualizer import Visualizer
+
+Imports became fully functional.
+
+2. Debugging and Correcting task_data.py
+
+The issue in task_data.py was fixed by ensuring timestamps were parsed correctly:
+
+-from datetime import datetime
+
+-self._submission_time = datetime.strptime(timestamp, "%Y-%m-%d %H:%M:%S")
+
+After conversion, all computations inside behavior_analyzer.py worked properly.
+
+3. Converting Due Dates in the Notebook
+
+Instead of passing due dates as strings, they were converted properly using:
+
+due_date = datetime.strptime("2025-11-08 21:08:00", "%Y-%m-%d %H:%M:%S")
+
+This removed the TypeError and allowed delay computations to run smoothly.
+
+
+**Final Outcome:**
+
+After performing all corrections:
+
+-All modules were imported successfully.
+
+-task_data.py processed timestamps correctly.
+
+-behavior_analyzer.py computed delays without any errors.
+
+The notebook successfully displayed behavioral statistics for the test student. The DataHabit project is now fully functional and ready for further development or presentation.
+
+This shows me that debugging process revealed the importance of Python package structure, Accurate date parsing and Clear separation of concerns between modules. Through systematic testing, folder corrections, and code fixes, the project was restored to working condition. This experience strengthened Python debugging skills and reinforced package-management best practices.
+
+
 ## 9. Use of Resources and Research Transparency
 
 As part of the development process, we made use of several online resources to understand the concepts, troubleshoot errors, and refine our implementation. Our goal was to learn effectively and apply the principles correctly, not to copy solutions blindly.
