@@ -12,6 +12,8 @@ Modules:
 from .task_data import TaskData
 from .behavior_analyzer import BehaviorAnalyzer
 from .visualizer import Visualizer
+from .data_cleaner import DataCleaner
+
 
 __all__ = ["TaskData", "BehaviorAnalyzer", "Visualizer"]
 
