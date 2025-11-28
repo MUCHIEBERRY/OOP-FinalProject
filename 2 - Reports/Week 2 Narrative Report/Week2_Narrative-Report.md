@@ -113,6 +113,109 @@ Working on this part helped me understand how small decisions can affect the rel
 
 ## 6. Data Cleaning and Support Functions
 
+During this week, I also worked on the Data Cleaning and Support Functions portion of the project, which focused on preparing the raw inputs so that the main classes (TaskData, BehaviorAnalyzer, and Visualizer) could function without errors. The goal of this part was to ensure that all data entering the system—especially timestamps and student task records—were properly formatted, validated, and cleaned before being processed.
+
+**Purpose of the Data Cleaning Component**
+
+The project relies heavily on timestamps and student activity logs, which means even minor inconsistencies (wrong timestamp format, missing values, or incorrect data types) could cause the entire system to fail. Because of this, we needed a layer of support functions that would:
+
+- Clean incoming task records
+
+- Validate the timestamp formats
+
+- Ensure missing or invalid inputs are handled gracefully
+
+- Prevent errors from propagating into the BehaviorAnalyzer and Visualizer
+
+- This component acts as a safeguard for the program's logic.
+
+**Initial Issues Identified**
+
+During testing, we encountered several problems that showed the need for a dedicated cleaning module:
+
+- Inconsistent timestamp formats
+Some dataset entries used "YYYY-MM-DD HH:MM:SS", while others included milliseconds or omitted seconds entirely. This caused parsing failures in TaskData.
+
+- Presence of string-based dates in computations
+The BehaviorAnalyzer tried to subtract strings from datetime objects, resulting in multiple TypeErrors.
+
+- Missing or null values
+A few sample entries had "None" or empty strings as timestamps, which caused the program to crash immediately.
+
+- Incorrect data types inside task records
+For example, submission counts were passed as strings instead of integers.
+
+These issues highlighted the need for an automated and consistent cleaning process.
+
+**Support Functions Implemented**
+1. Standardizing Timestamps
+
+I created a helper function that takes any timestamp—string or datetime—and returns a clean, standardized datetime object.
+
+The function performs:
+
+- Type checking
+
+- Safe parsing using datetime.strptime
+
+- Handling of optional seconds
+
+- Conversion of invalid formats into readable error messages
+
+- This ensures that all timestamps entering TaskData are valid and uniform.
+
+2. Handling Missing or Invalid Data
+
+To prevent the system from stopping due to incomplete data, I added logic that:
+
+- Detects missing timestamps
+
+- Replaces impossible values with defaults (e.g., using the due date if submission time is missing)
+
+- Logs the issue instead of crashing the program
+
+This helps maintain the flow of execution even when the input data is imperfect.
+
+3. Cleaning Task Dictionaries Before Object Creation
+
+Since most student tasks are represented as dictionaries before being converted into TaskData objects, I added a preprocessing step that:
+
+- Converts string numbers into integers
+
+- Removes trailing spaces in text fields
+
+- Ensures required keys like "due_date" and "submission_time" exist
+
+- Applies the timestamp parser to both due dates and submission dates
+
+This improves compatibility across all modules using task data.
+
+4. General Utility Functions
+
+Aside from timestamp cleaning, I also implemented:
+
+- A helper function to calculate hours/minutes between two dates
+
+- A safe dictionary getter that prevents KeyErrors
+
+- A mini-validator that checks if task entries follow the expected schema
+
+These functions made testing easier and ensured consistent behavior across the whole DataHabit package.
+
+**Results and Improvements**
+
+After all support functions were added, we retested the system and observed the following improvements:
+
+- Zero import-related errors caused by date mismatches
+
+- BehaviorAnalyzer successfully computed delays without raising any exceptions
+
+- Visualization methods ran smoothly because all timestamps were guaranteed to be datetime objects
+
+- TaskData class became more resilient, as every input was cleaned before processing
+
+The data cleaning component now serves as a protective layer that keeps the rest of the project stable and error-free.
+
 ## 7. Visualizer Structure and Plot Placeholders
 #### **Development Updates**
 This week, I was assigned by our task leader to develop the Visualizer class, which is responsible for generating graphs that show submission patterns and productivity levels of each student. When I opened the Jupyter notebook stored in our GitHub repository, I saw that a basic constructor and placeholder methods were already prepared. This initial structure helped me understand how the visualizer should function and what outputs it should produce.
